@@ -1,5 +1,11 @@
 'use strict';
 
 module.exports = function countSameElements(collection) {
-  return '实现练习要求，并改写该行代码。';
+    let collectionB = collection.filter(v => v.length === 1);
+    collection.filter(v => v.length === 3).map(x =>{
+        collectionB = collectionB.concat(Array(Number(x.charAt(2))).fill(x.charAt(0)) );
+    });
+    return Array.from(new Set(collectionB)).map(v => {
+        return {"key": v, "count": collectionB.filter(x => v === x).length}
+    });
 }
