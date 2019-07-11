@@ -7,6 +7,6 @@ module.exports = function countSameElements(collection) {
     console.log(parseInt(x.substr(2)));
   });
   return Array.from(new Set(collectionB)).map(v => {
-    return {"name": v, "summary":
+    return {"name": v, "summary": collectionB.filter(x => v === x).length}
   });
 }
